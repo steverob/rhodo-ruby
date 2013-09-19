@@ -41,7 +41,7 @@
     </form>
     <br />
     <ul data-role="listview" data-split-icon="check" data-split-theme="a">
-      <li data-role="list-divider">Todo</li>
+      <li data-role="list-divider" >Todo  <span class="ui-li-count"><%= @incomplete.length %></span></li>
       <% @incomplete.each do |todo| %>
       
           <li>
@@ -58,7 +58,7 @@
     <br />
     <br />
     <ul data-role="listview"  data-split-icon="back" data-split-theme="a" >
-      <li data-role="list-divider">Completed</li>
+      <li data-role="list-divider">Completed <span class="ui-li-count"><%= @completed.length %></span></li>
       <% @completed.each do |todo| %>
       
           <li>
