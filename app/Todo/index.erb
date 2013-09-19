@@ -1,0 +1,77 @@
+<style type="text/css">
+  form .ui-input-text {
+      display : inline-block;
+      width   : 65%;
+      vertical-align : middle;
+  }
+  form > .ui-btn {
+      display : inline-block;
+      width   : 25%;
+      vertical-align : middle;
+  }
+  @media all and (max-width:320px) {
+      form .ui-input-text {
+          width   : 100%;
+      }
+      form > .ui-btn {
+          width   : 100%;
+      }
+  }
+</style>
+
+
+<div data-role="page">
+
+	<div data-role="header" data-position="inline">
+    <h1>RhoDo</h1>
+	</div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @newTodo.object %>"/>
+      <input type="hidden" name="todo[completed]" value="false"/>
+
+      <input type="text" id="todo[task]" name="todo[task]" <%= placeholder("New Task") %> />
+      <input type="submit" data-type="button" data-icon="plus" value="Add">
+
+          <!-- <div data-role="fieldcontain">
+            <input type="text" id="todo[task]" name="todo[task]" <%= placeholder("New Task") %> data-inline="true" />
+            <input type="submit" value="Create" data-inline="true" />
+          </div> -->
+    </form>
+    <br />
+    <ul data-role="listview" data-split-icon="check" data-split-theme="a">
+      <li data-role="list-divider">Todo</li>
+      <% @incomplete.each do |todo| %>
+      
+          <li>
+            <a href="#">
+              <%= todo.task %>
+            </a>
+            <a href="<%= url_for :action => :mark_as_complete, :id => todo.object %>" data-split-icon=''>
+              Mark as Completed
+            </a>
+          </li>
+      <% end %>
+      
+    </ul>
+    <br />
+    <br />
+    <ul data-role="listview"  data-split-icon="back" data-split-theme="a" >
+      <li data-role="list-divider">Completed</li>
+      <% @completed.each do |todo| %>
+      
+          <li>
+            <a href="#">
+              <%= todo.task %>
+            </a>
+            <a href="<%= url_for :action => :mark_as_incomplete, :id => todo.object %>" data-split-icon=''>
+              Mark as Incomplete
+            </a>
+
+          </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>

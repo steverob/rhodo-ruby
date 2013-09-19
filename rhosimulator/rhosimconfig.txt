@@ -1,0 +1,8 @@
+rhodes_path='C:/Ruby193/lib/ruby/gems/1.9.1/gems/rhodes-4.0.0'
+app_version='1.0'
+app_name='todo'
+reload_app_changes=1
+debug_port=
+debug_host='127.0.0.1'
+platform='iphone'
+ext_path=C:/Ruby193/lib/ruby/gems/1.9.1/gems/rhodes-4.0.0/lib/commonAPI/coreapi;C:/Ruby193/lib/ruby/gems/1.9.1/gems/rhodes-4.0.0/lib/extensions/json;C:/Ruby193/lib/ruby/gems/1.9.1/gems/rhoconnect-client-4.0.0/lib/../ext/rhoconnect-client;

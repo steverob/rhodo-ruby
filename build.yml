@@ -1,0 +1,24 @@
+#sdk: "C:/Ruby193/lib/ruby/gems/1.9.1/gems/rhodes-4.0.0"
+sdkversion: 4.0.0
+name: todo
+version: 1.0
+vendor: rhomobile
+build: debug
+bbver: 6.0
+applog: rholog.txt
+iphone:
+  configuration: Release
+  sdk: iphonesimulator6.0
+  provisionprofile:
+  codesignidentity:
+  entitlements:
+  BundleIdentifier: com.rhomobile.todo
+  BundleURLScheme: todo
+wp:
+  productid: 'ac8f9581-032e-0131-9ebc-5cac4c04ba8a'
+symbian:
+  uid: '0xe2b44cd1'
+android:
+  version: 2.3.3
+
+extensions: ["rhoconnect-client"]
